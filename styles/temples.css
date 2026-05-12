@@ -9,7 +9,7 @@ body {
 }
 
 /* =========================
-   HEADER
+   HEADER & NAV
 ========================= */
 header {
   background-color: #4b0082;
@@ -25,9 +25,6 @@ header h1 {
   font-size: 1.5rem;
 }
 
-/* =========================
-   NAVIGATION (MOBILE FIRST)
-========================= */
 nav {
   background-color: #4b0082;
   display: flex;
@@ -36,14 +33,14 @@ nav {
 }
 
 nav ul {
-  display: none;
+  display: none; /* Hidden by default on mobile */
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-/* OPEN MENU */
+/* OPEN MENU (Mobile Toggle) */
 nav ul.show {
   display: block;
   position: absolute;
@@ -51,6 +48,7 @@ nav ul.show {
   left: 0;
   background-color: #310055;
   width: 100%;
+  z-index: 1000;
 }
 
 nav ul li a {
@@ -66,7 +64,7 @@ nav ul li a:hover {
 }
 
 /* =========================
-   HAMBURGER MENU (FIXED)
+   HAMBURGER MENU
 ========================= */
 #menu {
   background: none;
@@ -74,7 +72,7 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #ffffff;
   cursor: pointer;
-  display: block;
+  display: block; /* Shown on mobile */
 }
 
 #menu::before {
@@ -85,13 +83,8 @@ nav ul li a:hover {
   content: "X";
 }
 
-/* hide state instead of repeating selector */
-#menu.hide {
-  display: none;
-}
-
 /* =========================
-   MAIN CONTENT
+   MAIN CONTENT & GRID
 ========================= */
 main {
   max-width: 900px;
@@ -105,17 +98,10 @@ main h2 {
   padding-bottom: 0.5rem;
 }
 
-/* =========================
-   GRID GALLERY (FIXED)
-========================= */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Single column for mobile */
   gap: 2rem;
-}
-
-.grid-container.desktop {
-  grid-template-columns: repeat(3, 1fr);
 }
 
 /* =========================
@@ -150,11 +136,15 @@ footer {
 }
 
 /* =========================
-   MEDIA QUERY (CLEANED - NO REPEATS)
+   MEDIA QUERY (DESKTOP)
 ========================= */
 @media screen and (min-width: 600px) {
+  #menu {
+    display: none; /* Hide hamburger on desktop */
+  }
+
   nav ul {
-    display: flex;
+    display: flex; /* Show horizontal nav on desktop */
     justify-content: flex-end;
     gap: 1rem;
     position: static;
@@ -164,5 +154,9 @@ footer {
 
   nav ul li a {
     padding: 0.5rem 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   }
 }
