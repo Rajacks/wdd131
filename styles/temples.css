@@ -66,7 +66,7 @@ nav ul li a:hover {
 }
 
 /* =========================
-   HAMBURGER MENU
+   HAMBURGER MENU (FIXED)
 ========================= */
 #menu {
   background: none;
@@ -74,6 +74,7 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #ffffff;
   cursor: pointer;
+  display: block;
 }
 
 #menu::before {
@@ -82,6 +83,11 @@ nav ul li a:hover {
 
 #menu.open::before {
   content: "X";
+}
+
+/* hide state instead of repeating selector */
+#menu.hide {
+  display: none;
 }
 
 /* =========================
@@ -100,13 +106,21 @@ main h2 {
 }
 
 /* =========================
-   GRID GALLERY
+   GRID GALLERY (FIXED)
 ========================= */
 .grid-container {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
+.grid-container.desktop {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* =========================
+   FIGURE STYLES
+========================= */
 figure {
   margin: 0;
   text-align: center;
@@ -136,7 +150,7 @@ footer {
 }
 
 /* =========================
-   MEDIA QUERY (LARGE SCREEN)
+   MEDIA QUERY (CLEANED - NO REPEATS)
 ========================= */
 @media screen and (min-width: 600px) {
   nav ul {
@@ -150,15 +164,5 @@ footer {
 
   nav ul li a {
     padding: 0.5rem 1rem;
-  }
-
-  /* FIX: changed selector */
-  body .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* FIX: changed selector */
-  body #menu {
-    display: none;
   }
 }
