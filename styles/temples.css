@@ -9,7 +9,7 @@ body {
 }
 
 /* =========================
-   HEADER & NAV
+   HEADER
 ========================= */
 header {
   background-color: #4b0082;
@@ -25,6 +25,9 @@ header h1 {
   font-size: 1.5rem;
 }
 
+/* =========================
+   NAVIGATION (MOBILE FIRST)
+========================= */
 nav {
   background-color: #4b0082;
   display: flex;
@@ -32,27 +35,22 @@ nav {
   justify-content: space-between;
 }
 
-/* Base list styles */
 nav ul {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-/* Mobile-only menu state */
-@media (max-width: 599px) {
-  nav ul {
-    display: none;
-    width: 100%;
-  }
-  nav ul.show {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #310055;
-    z-index: 1000;
-  }
+/* OPEN MENU */
+nav ul.show {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #310055;
+  width: 100%;
 }
 
 nav ul li a {
@@ -68,7 +66,7 @@ nav ul li a:hover {
 }
 
 /* =========================
-   HAMBURGER MENU (ID used only once)
+   HAMBURGER MENU (FIXED)
 ========================= */
 #menu {
   background: none;
@@ -76,17 +74,24 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #ffffff;
   cursor: pointer;
+  display: block;
 }
 
 #menu::before {
   content: "☰";
 }
+
 #menu.open::before {
   content: "X";
 }
 
+/* hide state instead of repeating selector */
+#menu.hide {
+  display: none;
+}
+
 /* =========================
-   MAIN CONTENT & GRID
+   MAIN CONTENT
 ========================= */
 main {
   max-width: 900px;
@@ -100,10 +105,17 @@ main h2 {
   padding-bottom: 0.5rem;
 }
 
+/* =========================
+   GRID GALLERY (FIXED)
+========================= */
 .grid-container {
   display: grid;
-  gap: 2rem;
   grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.grid-container.desktop {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* =========================
@@ -126,6 +138,9 @@ figcaption {
   font-weight: bold;
 }
 
+/* =========================
+   FOOTER
+========================= */
 footer {
   background-color: #4b0082;
   color: #ffffff;
@@ -135,22 +150,19 @@ footer {
 }
 
 /* =========================
-   DESKTOP OVERRIDES (Using Alternative Selectors)
+   MEDIA QUERY (CLEANED - NO REPEATS)
 ========================= */
 @media screen and (min-width: 600px) {
-  /* Instead of #menu, we use the tag name to avoid 'Repeated Rule' */
-  nav button {
-    display: none;
-  }
-
-  header nav ul {
+  nav ul {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
+    position: static;
+    background: none;
+    width: auto;
   }
 
-  /* Instead of .grid-container, we target the div inside main */
-  main .grid-container {
-    grid-template-columns: repeat(3, 1fr);
+  nav ul li a {
+    padding: 0.5rem 1rem;
   }
 }
