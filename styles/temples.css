@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #4b0082;
+  --secondary-color: #ffffff;
+}
+
 /* =========================
    BASE STYLES
 ========================= */
@@ -12,8 +17,8 @@ body {
    HEADER
 ========================= */
 header {
-  background-color: #4b0082;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -29,7 +34,7 @@ header h1 {
    NAVIGATION
 ========================= */
 nav {
-  background-color: #4b0082;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +60,7 @@ nav ul.show {
 nav ul li a {
   display: block;
   padding: 1rem;
-  color: #ffffff;
+  color: var(--secondary-color);
   text-decoration: none;
   text-align: center;
 }
@@ -65,15 +70,17 @@ nav ul li a:hover {
 }
 
 /* =========================
-   MENU BUTTON (FIXED: NO DUPLICATE RULES)
+   MENU BUTTON (NO DUPLICATES)
 ========================= */
 #menu {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--secondary-color);
   cursor: pointer;
-  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 #menu::before {
@@ -82,11 +89,6 @@ nav ul li a:hover {
 
 #menu.open::before {
   content: "X";
-}
-
-/* instead of repeating #menu in media query */
-.hide-menu {
-  display: none;
 }
 
 /* =========================
@@ -105,20 +107,12 @@ main h2 {
 }
 
 /* =========================
-   GRID (FIXED: NO DUPLICATES)
+   GRID (FIXED NO REPEATS)
 ========================= */
 .grid-container {
   display: grid;
-  gap: 2rem;
-}
-
-/* mobile layout handled via class instead */
-.grid-mobile {
   grid-template-columns: 1fr;
-}
-
-.grid-desktop {
-  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 /* =========================
@@ -137,7 +131,7 @@ figure img {
 
 figcaption {
   margin-top: 0.5rem;
-  color: #4b0082;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -145,8 +139,8 @@ figcaption {
    FOOTER
 ========================= */
 footer {
-  background-color: #4b0082;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
