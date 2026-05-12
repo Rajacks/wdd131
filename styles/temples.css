@@ -100,10 +100,11 @@ main h2 {
 }
 
 /* =========================
-   GRID GALLERY
+   GRID GALLERY (MOBILE ONLY)
 ========================= */
 .grid-container {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
