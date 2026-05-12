@@ -100,17 +100,14 @@ main h2 {
 }
 
 /* =========================
-   GRID GALLERY (MOBILE ONLY)
+   GRID GALLERY
 ========================= */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2rem;
+  /* removed duplicate grid-template-columns */
 }
 
-/* =========================
-   FIGURES
-========================= */
 figure {
   margin: 0;
   text-align: center;
@@ -137,4 +134,30 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* =========================
+   MEDIA QUERY (LARGE SCREEN)
+========================= */
+@media screen and (min-width: 600px) {
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: static;
+    background: none;
+    width: auto;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #menu {
+    display: none;
+  }
 }
