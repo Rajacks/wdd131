@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Album - WDD 131</title>
+    <meta
+      name="description"
+      content="A responsive temple gallery page for WDD 131."
+    />
+    <meta name="author" content="Raymund Antrone" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/temples.css" />
+    <link
+      rel="stylesheet"
+      href="styles/temples-large.css"
+      media="screen and (min-width: 600px)"
+    />
+    <script src="scripts/temples.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Temple Album</h1>
+      <button id="menu" aria-label="Toggle Menu"></button>
+      <nav>
+        <ul id="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Old</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Large</a></li>
+          <li><a href="#">Small</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Home</h2>
+      <div class="grid-container">
+        <figure>
+          <img
+            src="images/temples1.jpeg"
+            alt="Salt Lake City Utah Temple"
+            loading="lazy"
+          />
+          <figcaption>Salt Lake City Utah</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples2.jpeg"
+            alt="bacolod philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Bacolod Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples3.jpeg"
+            alt="cebu philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Cebu Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples4.jpeg"
+            alt="alabang philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Alabang Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples5.jpeg"
+            alt="davao philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Davao Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples6.jpeg"
+            alt="urdaneta philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Urdaneta Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples7.jpeg"
+            alt="manila philippines temple"
+            loading="lazy"
+          />
+          <figcaption>Manila Philippines</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples8.jpeg"
+            alt="San Diego California Temple"
+            loading="lazy"
+          />
+          <figcaption>San Diego California</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/temples9.jpeg"
+            alt="San Luis Potosi Mexico Temple"
+            loading="lazy"
+          />
+          <figcaption>San Luis Potosi Mexico Temple</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        &copy;<span id="currentyear"></span> Raymund Antrone
+        <img
+          src="https://flagcdn.com/24x18/ph.png"
+          alt="Philippines Flag"
+          width="20"
+      </p>
+      <p id="lastModified"></p>
+    </footer>
+  </body>
+</html>

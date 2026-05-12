@@ -1,0 +1,19 @@
+/* Navigation for Large View */
+#menu {
+  display: none; /* Hide hamburger */
+}
+
+#navigation {
+  display: flex !important; /* Force flex for horizontal menu */
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#navigation li a {
+  padding: 0.5rem 1rem;
+}
+
+/* Grid for Large View */
+.grid-container {
+  grid-template-columns: repeat(3, 1fr); /* 3 columns as per screenshot */
+}
