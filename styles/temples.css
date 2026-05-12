@@ -1,4 +1,6 @@
-/* Base Styles & Typography */
+/* =========================
+   BASE STYLES
+========================= */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -6,10 +8,12 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
   background-color: #4b0082;
-  color: white;
+  color: #ffffff;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -21,33 +25,38 @@ header h1 {
   font-size: 1.5rem;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION (MOBILE FIRST)
+========================= */
 nav {
   background-color: #4b0082;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* REQUIRED FLEXBOX FIX */
 nav ul {
   display: none;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
+/* OPEN MENU */
 nav ul.show {
   display: block;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
   background-color: #310055;
+  width: 100%;
 }
 
-/* LINKS */
 nav ul li a {
   display: block;
   padding: 1rem;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   text-align: center;
 }
@@ -56,12 +65,14 @@ nav ul li a:hover {
   background-color: #6a0dad;
 }
 
-/* HAMBURGER MENU */
+/* =========================
+   HAMBURGER MENU
+========================= */
 #menu {
   background: none;
   border: none;
   font-size: 2rem;
-  color: white;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -73,7 +84,9 @@ nav ul li a:hover {
   content: "X";
 }
 
-/* MAIN */
+/* =========================
+   MAIN CONTENT
+========================= */
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -86,7 +99,9 @@ main h2 {
   padding-bottom: 0.5rem;
 }
 
-/* GRID */
+/* =========================
+   GRID GALLERY
+========================= */
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -110,18 +125,20 @@ figcaption {
   font-weight: bold;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   background-color: #4b0082;
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
 
 /* =========================
-   REQUIRED MEDIA QUERY FIX
-   ========================= */
+   MEDIA QUERY (LARGE SCREEN)
+========================= */
 @media screen and (min-width: 600px) {
   nav ul {
     display: flex;
@@ -129,6 +146,7 @@ footer {
     gap: 1rem;
     position: static;
     background: none;
+    width: auto;
   }
 
   nav ul li a {
