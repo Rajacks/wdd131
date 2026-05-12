@@ -1,24 +1,29 @@
 /* =========================
-   LARGE VIEW ONLY
+   LARGE SCREEN STYLES (temples-large.css)
 ========================= */
 
-/* Navigation (desktop layout) */
-#navigation {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: flex-end;
-}
+@media screen and (min-width: 600px) {
+  /* Show the horizontal menu */
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: static;
+    background: none;
+    width: auto;
+  }
 
-#navigation li a {
-  padding: 0.5rem 1rem;
-}
+  nav ul li a {
+    padding: 0.5rem 1rem;
+  }
 
-/* Grid (desktop 3 columns) */
-.grid-container {
-  grid-template-columns: repeat(3, 1fr);
-}
+  /* Update the grid layout */
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-/* Hide hamburger menu */
-#menu {
-  display: none;
+  /* Hide the hamburger button */
+  #menu {
+    display: none;
+  }
 }
