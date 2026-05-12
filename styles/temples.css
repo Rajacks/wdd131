@@ -6,14 +6,14 @@ body {
   color: #333;
 }
 
+/* HEADER */
 header {
-  background-color: #4b0082; /* Purple from screenshot */
+  background-color: #4b0082;
   color: white;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 header h1 {
@@ -21,7 +21,42 @@ header h1 {
   font-size: 1.5rem;
 }
 
-/* Hamburger Button */
+/* NAVIGATION */
+nav {
+  background-color: #4b0082;
+}
+
+/* REQUIRED FLEXBOX FIX */
+nav ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul.show {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #310055;
+}
+
+/* LINKS */
+nav ul li a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: #6a0dad;
+}
+
+/* HAMBURGER MENU */
 #menu {
   background: none;
   border: none;
@@ -31,48 +66,14 @@ header h1 {
 }
 
 #menu::before {
-  content: "☰"; /* Hamburger icon */
+  content: "☰";
 }
 
 #menu.open::before {
-  content: "X"; /* Close icon */
+  content: "X";
 }
 
-/* Navigation - Mobile Hidden by default */
-nav {
-  background-color: #4b0082;
-}
-
-#navigation {
-  display: none; /* Toggle this via JS */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#navigation.show {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: #310055;
-}
-
-#navigation li a {
-  display: block;
-  padding: 1rem;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-}
-
-#navigation li a:hover {
-  background-color: #6a0dad;
-}
-
-/* Main Layout */
+/* MAIN */
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -85,9 +86,10 @@ main h2 {
   padding-bottom: 0.5rem;
 }
 
+/* GRID */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column for mobile */
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -108,11 +110,36 @@ figcaption {
   font-weight: bold;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #4b0082;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* =========================
+   REQUIRED MEDIA QUERY FIX
+   ========================= */
+@media screen and (min-width: 600px) {
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: static;
+    background: none;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #menu {
+    display: none;
+  }
 }
