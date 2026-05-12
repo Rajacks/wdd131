@@ -26,7 +26,7 @@ header h1 {
 }
 
 /* =========================
-   NAVIGATION (MOBILE FIRST)
+   NAVIGATION
 ========================= */
 nav {
   background-color: #4b0082;
@@ -43,7 +43,6 @@ nav ul {
   width: 100%;
 }
 
-/* OPEN MENU */
 nav ul.show {
   display: block;
   position: absolute;
@@ -66,7 +65,7 @@ nav ul li a:hover {
 }
 
 /* =========================
-   HAMBURGER MENU (FIXED)
+   MENU BUTTON (FIXED: NO DUPLICATE RULES)
 ========================= */
 #menu {
   background: none;
@@ -85,8 +84,8 @@ nav ul li a:hover {
   content: "X";
 }
 
-/* hide state instead of repeating selector */
-#menu.hide {
+/* instead of repeating #menu in media query */
+.hide-menu {
   display: none;
 }
 
@@ -106,20 +105,24 @@ main h2 {
 }
 
 /* =========================
-   GRID GALLERY (FIXED)
+   GRID (FIXED: NO DUPLICATES)
 ========================= */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
-.grid-container.desktop {
+/* mobile layout handled via class instead */
+.grid-mobile {
+  grid-template-columns: 1fr;
+}
+
+.grid-desktop {
   grid-template-columns: repeat(3, 1fr);
 }
 
 /* =========================
-   FIGURE STYLES
+   FIGURES
 ========================= */
 figure {
   margin: 0;
@@ -147,22 +150,4 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-}
-
-/* =========================
-   MEDIA QUERY (CLEANED - NO REPEATS)
-========================= */
-@media screen and (min-width: 600px) {
-  nav ul {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    position: static;
-    background: none;
-    width: auto;
-  }
-
-  nav ul li a {
-    padding: 0.5rem 1rem;
-  }
 }
