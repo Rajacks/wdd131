@@ -8,6 +8,7 @@
       name="description"
       content="An informational page about the Philippines, featuring key data, regional weather, and scenic views."
     />
+    <meta name="author" content="Raymund Antrone" />
     <link rel="stylesheet" href="styles/place.css" />
     <script src="scripts/place.js" defer></script>
   </head>
@@ -19,9 +20,12 @@
     <main>
       <section class="hero-box">
         <picture>
-          <source srcset="images/banaue.jpg" media="(min-width: 640px)" />
+          <source
+            srcset="images/banaue-large.webp.webp"
+            media="(min-width: 640px)"
+          />
           <img
-            src="images/banaue.jpg"
+            src="images/banaue-small.webp.webp"
             alt="Banaue Rice Terraces, Philippines. Beautifully cultivated rice terraces fill a lush valley with vibrant green hues."
             loading="lazy"
           />
@@ -71,7 +75,7 @@
         <div class="card-content">
           <div class="weather-icon-container">
             <img
-              src="images/weather-icon.svg.svg"
+              src="images/weather-icon.svg"
               alt="Partly Cloudy Tropical Weather"
               class="mobile-weather-icon"
             />
