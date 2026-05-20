@@ -1,0 +1,181 @@
+/* Global CSS Variables */
+:root {
+  --primary-color: #0038a8; /* Philippine Royal Blue */
+  --secondary-color: #ce1126; /* Philippine Red */
+  --accent-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 4px;
+}
+
+/* Base Styles & Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: #f4f4f4;
+  line-height: 1.5;
+}
+
+/* Header Styling */
+header {
+  background-color: var(--primary-color);
+  border-bottom: 6px solid var(--secondary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.25rem;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Layout Layout (Stacked View) */
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-box {
+  width: 100%;
+}
+
+.hero-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Informational Cards */
+.info-card {
+  background-color: var(--text-light);
+  margin: 1rem auto;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 0.95rem;
+}
+
+.label {
+  font-weight: bold;
+  width: 110px;
+  text-align: right;
+  margin-right: 0.75rem;
+}
+
+/* Mobile Weather Elements */
+.weather-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive Styling for Desktop / Wider Views */
+@media (min-width: 640px) {
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Target the container to fit nicely over background */
+  .hero-box img {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+  }
+
+  /* Position cards directly over hero background to replicate wide screenshot */
+  .info-card {
+    position: absolute;
+    background-color: var(--accent-bg);
+    margin: 0;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .data-card {
+    top: 40px;
+    left: 30px;
+  }
+
+  .weather-card {
+    bottom: 40px;
+    right: 30px;
+  }
+
+  .info-card h2 {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 0.4rem;
+    font-size: 1.5rem;
+    text-align: left;
+    text-indent: 10px;
+  }
+
+  .label {
+    width: 100px;
+  }
+
+  /* Hide Mobile SVG Icon in Desktop View */
+  .weather-icon-container {
+    display: none;
+  }
+
+  /* Requirement 6: Use a pseudo-element for the weather icon in the large view */
+  .weather-card h2::after {
+    content: " ⛅";
+    font-size: 1.3rem;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Philippines - Country Profile</title>
+    <meta
+      name="description"
+      content="An informational page about the Philippines, featuring key data, regional weather, and scenic views."
+    />
+    <link rel="stylesheet" href="styles/place.css" />
+    <script src="scripts/place.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Philippines</h1>
+    </header>
+
+    <main>
+      <section class="hero-box">
+        <picture>
+          <source srcset="images/banaue.jpg" media="(min-width: 640px)" />
+          <img
+            src="images/banaue.jpg"
+            alt="Banaue Rice Terraces, Philippines. Beautifully cultivated rice terraces fill a lush valley with vibrant green hues."
+            loading="lazy"
+          />
+        </picture>
+      </section>
+
+      <section class="info-card data-card">
+        <h2>Data</h2>
+        <div class="card-content">
+          <div class="row">
+            <span class="label">Area:</span>
+            <span class="value">300,000 sq km</span>
+          </div>
+          <div class="row">
+            <span class="label">Population:</span>
+            <span class="value">117,337,368</span>
+          </div>
+          <div class="row">
+            <span class="label">Capital:</span>
+            <span class="value">Manila</span>
+          </div>
+          <div class="row">
+            <span class="label">Languages:</span>
+            <span class="value">Filipino, English</span>
+          </div>
+          <div class="row">
+            <span class="label">Currency:</span>
+            <span class="value">Philippine Peso (PHP)</span>
+          </div>
+          <div class="row">
+            <span class="label">Time Zone:</span>
+            <span class="value">UTC+8</span>
+          </div>
+          <div class="row">
+            <span class="label">Calling Code:</span>
+            <span class="value">+63</span>
+          </div>
+          <div class="row">
+            <span class="label">Internet TLD:</span>
+            <span class="value">.ph</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-card weather-card">
+        <h2>Weather</h2>
+        <div class="card-content">
+          <div class="weather-icon-container">
+            <img
+              src="images/weather-icon.svg.svg"
+              alt="Partly Cloudy Tropical Weather"
+              class="mobile-weather-icon"
+            />
+          </div>
+          <div class="row">
+            <span class="label">Temperature:</span>
+            <span class="value" id="temp">28</span> °C
+          </div>
+          <div class="row">
+            <span class="label">Conditions:</span>
+            <span class="value">Partly Cloudy</span>
+          </div>
+          <div class="row">
+            <span class="label">Wind:</span>
+            <span class="value" id="wind">12</span> km/h
+          </div>
+          <div class="row">
+            <span class="label">Wind Chill:</span>
+            <span class="value" id="windchill"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy;<span id="currentyear"></span> Raymund Antrone
+        <img
+          src="https://flagcdn.com/24x18/ph.png"
+          alt="Philippines Flag"
+          width="20"
+        />
+      </p>
+      <p class="last-modified">
+        Last Modification: <span id="lastModified"></span>
+      </p>
+    </footer>
+  </body>
+</html>
