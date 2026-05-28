@@ -1,68 +1,75 @@
-/* =========================
-   BASE STYLES (temples.css)
-========================= */
-body {
-  font-family: "Roboto", sans-serif;
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER (FIXED LAYOUT)
+========================= */
 header {
-  background-color: #4b0082;
-  color: #ffffff;
+  background: linear-gradient(135deg, #4b0082, #2d004d);
+  color: #fff;
   padding: 1rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+
+  text-align: left;
 }
 
 header h1 {
+  font-size: 1.8rem;
   margin: 0;
-  font-size: 1.5rem;
 }
 
+/* Push nav to the right */
 nav {
-  background-color: #4b0082;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-left: auto;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
 nav ul {
-  display: none;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  display: none;
+  flex-direction: column;
+  background-color: #310055;
 }
 
 nav ul.show {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #310055;
-  width: 100%;
+  display: flex;
 }
 
 nav ul li a {
   display: block;
   padding: 1rem;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   text-align: center;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
   background-color: #6a0dad;
 }
 
+/* Hamburger */
 #menu {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
 }
 
@@ -71,47 +78,110 @@ nav ul li a:hover {
 }
 
 #menu.open::before {
-  content: "X";
+  content: "✖";
 }
 
+/* =========================
+   MAIN LAYOUT
+========================= */
 main {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
 }
 
 main h2 {
   text-align: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #4b0082;
 }
 
+/* =========================
+   GRID LAYOUT
+========================= */
 .grid-container {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
+/* =========================
+   TEMPLE CARD
+========================= */
 figure {
-  margin: 0;
-  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-5px);
 }
 
 figure img {
   width: 100%;
-  height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 180px;
+  object-fit: cover;
+  display: block;
 }
 
+/* Caption */
 figcaption {
-  margin-top: 0.5rem;
-  color: #4b0082;
-  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
 }
 
+figcaption h3 {
+  color: #4b0082;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+figcaption p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   background-color: #4b0082;
-  color: #ffffff;
+  color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* =========================
+   DESKTOP NAV
+========================= */
+@media (min-width: 600px) {
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: none;
+    gap: 1rem;
+  }
+
+  nav {
+    margin-left: auto;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: #2c5f9e;
+  }
+
+  nav ul li a:hover {
+    background: #163a66;
+  }
 }

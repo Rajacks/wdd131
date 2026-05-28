@@ -3,6 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtered Temples - WDD 131</title>
+
+    <meta
+      name="description"
+      content="A responsive temple gallery with filtering options."
+    />
+    <meta name="author" content="Raymund Antrone" />
+
+    <link rel="stylesheet" href="styles/temples.css" />
+    <link
+      rel="stylesheet"
+      href="styles/temples-large.css"
+      media="screen and (min-width: 600px)"
+    />
+
+    <script src="scripts/temples.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Temple Album</h1>
+
+      <!-- Hamburger menu (REQUIRED) -->
+      <button id="menu" aria-label="Toggle Menu"></button>
+
+      <nav>
+        <ul id="navigation">
+          <li><a href="#" id="home">Home</a></li>
+          <li><a href="#" id="old">Old</a></li>
+          <li><a href="#" id="new">New</a></li>
+          <li><a href="#" id="large">Large</a></li>
+          <li><a href="#" id="small">Small</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Home</h2>
+
+      <!-- JS will generate temple cards here -->
+      <div id="temple-container" class="grid-container"></div>
+    </main>
+
+    <footer>
+      <p>
+        &copy;<span id="year"></span> Raymund Antrone
+        <img
+          src="https://flagcdn.com/24x18/ph.png"
+          alt="Philippines Flag"
+          width="20"
+        />
+      </p>
+
+      <p id="lastModified"></p>
+    </footer>
+  </body>
+</html>
+
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temple Album - WDD 131</title>
     <meta
       name="description"
@@ -137,4 +200,4 @@
       <p id="lastModified"></p>
     </footer>
   </body>
-</html>
+</html> -->
