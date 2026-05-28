@@ -71,6 +71,9 @@ nav ul li a:hover {
   font-size: 2rem;
   color: white;
   cursor: pointer;
+  margin-left: auto; /* FIXED: Pushes the hamburger button all the way to the right side */
+  padding-right: 0px;
+  margin-right: -90px;
 }
 
 #menu::before {

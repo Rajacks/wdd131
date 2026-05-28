@@ -112,6 +112,14 @@ function displayTemples(list) {
 displayTemples(temples);
 
 // =====================
+// HAMBURGER BUTTON FUNCTIONALITY
+// =====================
+document.querySelector("#menu").addEventListener("click", function() {
+  this.classList.toggle("open");
+  document.querySelector("nav ul").classList.toggle("show");
+});
+
+// =====================
 // FILTER BUTTONS
 // =====================
 document.querySelector("#home").addEventListener("click", () => {
