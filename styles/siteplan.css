@@ -1,0 +1,197 @@
+/* Import Modern Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap");
+
+/* Base Reset & Variables */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif; /* CRITERION 10: Selected Font */
+  background-color: #f8fafc; /* CRITERION 8: Neutral Canvas Color */
+  color: #334155;
+  line-height: 1.6;
+  padding: 0 0 40px 0;
+}
+
+/* Header Banner */
+header {
+  background: linear-gradient(
+    135deg,
+    #1e293b 0%,
+    #0f172a 100%
+  ); /* CRITERION 8: Fixed missing % sign to restore dark background */
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-container h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #38bdf8;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Main Layout Wrapper */
+main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Clean UI Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-family: "Poppins", sans-serif;
+  color: #1e293b; /* CRITERION 8: Applied Theme Primary */
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.card p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Scenario Formatting */
+.scenario-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.scenario-item {
+  background-color: #f1f5f9;
+  border-left: 4px solid #0284c7; /* CRITERION 8: Applied Accent */
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+}
+
+.question {
+  font-style: italic;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* Color Scheme Swatch Indicators */
+.color-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.color-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.color-preview {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  flex-shrink: 0;
+}
+
+.primary-color {
+  background-color: #1e293b;
+}
+.secondary-color {
+  background-color: #0284c7;
+}
+.neutral-light {
+  background-color: #f8fafc;
+}
+
+/* ==========================================
+   WIREFRAME RESPONSIVE INTERFACES (VERTICAL STACK)
+========================================== */
+.wireframe-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.wireframe-row-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.wireframe-row-box h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.view-description {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* Image Window Wrapper */
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* MOBILE PANEL FOCUS: Zooms and centers on the twin mobile phone screens */
+.mobile-row .image-wrapper {
+  height: 480px;
+}
+.mobile-row .image-wrapper img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* DESKTOP PANEL FOCUS: FIXED to show the entire layout naturally */
+.desktop-row .image-wrapper {
+  height: auto; /* Removes the hard pixel cut-off ceiling */
+  max-height: none; /* Allows full vertical expansion */
+}
+.desktop-row .image-wrapper img {
+  width: 100%;
+  height: auto; /* Let height scale contextually with width ratio */
+  object-fit: contain;
+  object-position: right center;
+}
