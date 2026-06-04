@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Review Form</title>
-    <meta name="description" content="W05 Product Review Form for WDD131." />
+    <meta
+      name="description"
+      content="An interactive, responsive product review form for submitting user installation feedback."
+    />
+    <meta name="author" content="Raymund Antrone" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +31,6 @@
           your installation experience.
         </p>
 
-        <!-- Product Selection (Populated via JS) -->
         <div class="form-group">
           <label for="product-name"
             >Product Name <span class="required">*</span></label
@@ -37,7 +40,6 @@
           </select>
         </div>
 
-        <!-- Star Radio Ratings -->
         <div class="form-group">
           <label class="group-label"
             >Overall Rating <span class="required">*</span></label
@@ -60,7 +62,6 @@
           </div>
         </div>
 
-        <!-- Date Input -->
         <div class="form-group">
           <label for="installation-date"
             >Date of Installation <span class="required">*</span></label
@@ -73,53 +74,62 @@
           />
         </div>
 
-        <!-- Feature Checkboxes -->
         <div class="form-group">
           <label class="group-label"
             >Useful Features
             <span class="instructions">(Check all that apply)</span></label
           >
           <div class="checkbox-container">
-            <label class="checkbox-label">
+            <div class="checkbox-item">
               <input
                 type="checkbox"
                 id="feature-performance"
                 name="features"
                 value="performance"
               />
-              Performance Upgrades
-            </label>
-            <label class="checkbox-label">
+              <label for="feature-performance" class="checkbox-label"
+                >Performance Upgrades</label
+              >
+            </div>
+
+            <div class="checkbox-item">
               <input
                 type="checkbox"
                 id="feature-durability"
                 name="features"
                 value="durability"
               />
-              Long-lasting Durability
-            </label>
-            <label class="checkbox-label">
+              <label for="feature-durability" class="checkbox-label"
+                >Long-lasting Durability</label
+              >
+            </div>
+
+            <div class="checkbox-item">
               <input
                 type="checkbox"
                 id="feature-design"
                 name="features"
                 value="design"
               />
-              Sleek Interface & Design
-            </label>
-            <label class="checkbox-label">
+              <label for="feature-design" class="checkbox-label"
+                >Sleek Interface & Design</label
+              >
+            </div>
+
+            <div class="checkbox-item">
               <input
                 type="checkbox"
                 id="feature-setup"
                 name="features"
                 value="setup"
               />
-              Easy Installation Setup
-            </label>
+              <label for="feature-setup" class="checkbox-label"
+                >Easy Installation Setup</label
+              >
+            </div>
           </div>
         </div>
 
-        <!-- Written Review Textarea -->
         <div class="form-group">
           <label for="written-review"
             >Written Review <span class="optional">(Optional)</span></label
@@ -132,7 +142,6 @@
           ></textarea>
         </div>
 
-        <!-- User Name Input -->
         <div class="form-group">
           <label for="user-name"
             >Your Name <span class="optional">(Optional)</span></label
@@ -145,7 +154,6 @@
           />
         </div>
 
-        <!-- Submission Action -->
         <input type="submit" value="Submit Product Review" class="submit-btn" />
       </form>
     </main>
