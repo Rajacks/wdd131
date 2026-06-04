@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Review Form</title>
+    <meta name="description" content="W05 Product Review Form for WDD131." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/form.css" />
+    <script src="scripts/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Product Review Dashboard</h1>
+    </header>
+
+    <main>
+      <form method="get" action="review.html" class="review-form">
+        <h2>Share Your Feedback</h2>
+        <p>
+          Please take a moment to fill out this review layout form regarding
+          your installation experience.
+        </p>
+
+        <!-- Product Selection (Populated via JS) -->
+        <div class="form-group">
+          <label for="product-name"
+            >Product Name <span class="required">*</span></label
+          >
+          <select id="product-name" name="productName" required>
+            <option value="" disabled selected>Select a Product ...</option>
+          </select>
+        </div>
+
+        <!-- Star Radio Ratings -->
+        <div class="form-group">
+          <label class="group-label"
+            >Overall Rating <span class="required">*</span></label
+          >
+          <div class="rating-stars">
+            <input type="radio" id="star5" name="rating" value="5" required />
+            <label for="star5" title="5 stars">☆</label>
+
+            <input type="radio" id="star4" name="rating" value="4" required />
+            <label for="star4" title="4 stars">☆</label>
+
+            <input type="radio" id="star3" name="rating" value="3" required />
+            <label for="star3" title="3 stars">☆</label>
+
+            <input type="radio" id="star2" name="rating" value="2" required />
+            <label for="star2" title="2 stars">☆</label>
+
+            <input type="radio" id="star1" name="rating" value="1" required />
+            <label for="star1" title="1 star">☆</label>
+          </div>
+        </div>
+
+        <!-- Date Input -->
+        <div class="form-group">
+          <label for="installation-date"
+            >Date of Installation <span class="required">*</span></label
+          >
+          <input
+            type="date"
+            id="installation-date"
+            name="installationDate"
+            required
+          />
+        </div>
+
+        <!-- Feature Checkboxes -->
+        <div class="form-group">
+          <label class="group-label"
+            >Useful Features
+            <span class="instructions">(Check all that apply)</span></label
+          >
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="feature-performance"
+                name="features"
+                value="performance"
+              />
+              Performance Upgrades
+            </label>
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="feature-durability"
+                name="features"
+                value="durability"
+              />
+              Long-lasting Durability
+            </label>
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="feature-design"
+                name="features"
+                value="design"
+              />
+              Sleek Interface & Design
+            </label>
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="feature-setup"
+                name="features"
+                value="setup"
+              />
+              Easy Installation Setup
+            </label>
+          </div>
+        </div>
+
+        <!-- Written Review Textarea -->
+        <div class="form-group">
+          <label for="written-review"
+            >Written Review <span class="optional">(Optional)</span></label
+          >
+          <textarea
+            id="written-review"
+            name="writtenReview"
+            rows="5"
+            placeholder="Write your product experience here..."
+          ></textarea>
+        </div>
+
+        <!-- User Name Input -->
+        <div class="form-group">
+          <label for="user-name"
+            >Your Name <span class="optional">(Optional)</span></label
+          >
+          <input
+            type="text"
+            id="user-name"
+            name="userName"
+            placeholder="e.g. Raymund Antrone"
+          />
+        </div>
+
+        <!-- Submission Action -->
+        <input type="submit" value="Submit Product Review" class="submit-btn" />
+      </form>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="currentyear"></span> | Raymund Antrone | Bacolod City,
+        Philippines
+      </p>
+      <p class="last-modified">
+        Last Modified: <span id="lastmodified"></span>
+      </p>
+    </footer>
+  </body>
+</html>

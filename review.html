@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Submission Confirmed</title>
+    <meta
+      name="description"
+      content="Form tracking confirmation ledger page."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/form.css" />
+    <style>
+      .confirmation-box {
+        text-align: center;
+        padding: 40px 24px;
+      }
+      .success-icon {
+        font-size: 3.5rem;
+        color: #22c55e;
+        margin-bottom: 16px;
+      }
+      .counter-badge {
+        display: inline-block;
+        background-color: #eff6ff;
+        color: var(--accent-color);
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin: 20px 0;
+        border: 1px solid #bfdbfe;
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 16px;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Product Review Dashboard</h1>
+    </header>
+
+    <main>
+      <section class="review-form confirmation-box">
+        <div class="success-icon">✓</div>
+        <h2>Review Submitted Successfully!</h2>
+        <p>
+          Thank you for submitting your product feedback. Your review helps
+          support our development metrics parameters.
+        </p>
+
+        <!-- Live local storage review counter wrapper -->
+        <div class="counter-badge">
+          Total Reviews Completed: <span id="review-count">0</span>
+        </div>
+
+        <br />
+        <a href="form.html" class="back-link">← Submit another layout review</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="currentyear"></span> | Raymund Antrone | Bacolod City,
+        Philippines
+      </p>
+      <p class="last-modified">
+        Last Modified: <span id="lastmodified"></span>
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Retrieve or initialize total review count index values from local browser storage
+        let reviewCount =
+          parseInt(localStorage.getItem("completedReviews")) || 0;
+
+        // Increment tracking record context by one unit
+        reviewCount += 1;
+        localStorage.setItem("completedReviews", reviewCount);
+
+        // Display tracking update output values to element structure safely
+        document.getElementById("review-count").textContent = reviewCount;
+
+        // Handle standard footer layout updates
+        document.getElementById("currentyear").textContent =
+          new Date().getFullYear();
+        document.getElementById("lastmodified").textContent =
+          document.lastModified;
+      });
+    </script>
+  </body>
+</html>
