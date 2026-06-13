@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get custom itinerary advice or submit inquiries to Explore Negros Portal setup operations."
+    />
+    <title>Explore Negros Portal - Contact Us</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">Explore Negros</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="form-container">
+      <section class="form-card">
+        <h1>Plan Your Itinerary</h1>
+        <p>
+          Fill out this form to connect with our regional guides and configure
+          custom transit options.
+        </p>
+
+        <form id="itineraryForm" action="#" method="GET">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              placeholder="Juan Dela Cruz"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="emailAddress">Email Address *</label>
+            <input
+              type="email"
+              id="emailAddress"
+              name="emailAddress"
+              required
+              placeholder="juan@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="travelDate">Target Travel Date</label>
+            <input type="date" id="travelDate" name="travelDate" />
+          </div>
+
+          <div class="form-group">
+            <label for="destinationStyle">Primary Travel Style</label>
+            <select id="destinationStyle" name="destinationStyle">
+              <option value="heritage">Heritage & History Exploration</option>
+              <option value="foodie">Bacolod Culinary Food Tour</option>
+              <option value="nature">Mountain & Eco Escapes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="userMessage">Additional Inquiries / Context</label>
+            <textarea
+              id="userMessage"
+              name="userMessage"
+              rows="5"
+              placeholder="Specify any dietary requirements or transport needs..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit-btn">
+            Submit Information
+          </button>
+        </form>
+        <div id="formFeedback" class="form-feedback hidden"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Explore Negros Portal | Designed by Raymund Antrone</p>
+      <p><a href="references.html">View Sources & References Page</a></p>
+    </footer>
+  </body>
+</html>

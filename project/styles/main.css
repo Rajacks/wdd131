@@ -1,0 +1,536 @@
+/* --- Color Variables matching user Siteplan Design Parameters --- */
+:root {
+  --primary-color: #1e293b; /* Deep Slate */
+  --secondary-accent: #0284c7; /* Sky Blue */
+  --neutral-canvas: #f8fafc; /* Slate White */
+  --pure-white: #ffffff;
+  --text-dark: #334155;
+  --border-light: #e2e8f0;
+}
+
+/* --- Base Layout Normalization --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--neutral-canvas);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- Navigation Header & Layout --- */
+header {
+  background-color: var(--primary-color);
+  color: var(--pure-white);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav .nav-links a {
+  color: var(--border-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: var(--secondary-accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--pure-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Global Button Styles --- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--secondary-accent);
+  color: var(--pure-white);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--pure-white);
+}
+
+/* --- Main Layout Grid Configurations --- */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- Split Hero Layout (Desktop Wireframe Mapping) --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--pure-white);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+}
+
+.welcome-badge {
+  display: inline-block;
+  background-color: var(--neutral-canvas);
+  color: var(--secondary-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.hero h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+  color: #475569;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* --- Live Hero Image Styling (Replaces Old Blueprint Box) --- */
+.hero-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- 4-Column Feature Row --- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background-color: var(--pure-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* --- Bottom Services Section --- */
+.services-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.service-box {
+  background-color: var(--pure-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.service-wireframe-img {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-accent);
+}
+
+/* --- Directory Filters and Grid --- */
+.directory-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.directory-hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.filter-btn {
+  background-color: var(--pure-white);
+  border: 1px solid var(--border-light);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--secondary-accent);
+  color: var(--pure-white);
+  border-color: var(--secondary-accent);
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.directory-card {
+  background-color: var(--pure-white);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Updated Card Image Rules for Live Assets --- */
+.card-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.directory-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.directory-card:hover .directory-img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  align-self: flex-start;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* --- Dashboard & Interaction UI --- */
+.dashboard-section {
+  background-color: var(--pure-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.dashboard-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.visit-box {
+  background-color: var(--neutral-canvas);
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--secondary-accent);
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fav-item {
+  background: var(--neutral-canvas);
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-light);
+}
+
+/* --- Form UI Styling --- */
+.form-container {
+  max-width: 600px;
+}
+
+.form-card {
+  background-color: var(--pure-white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-card h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.form-card p {
+  margin-bottom: 2rem;
+  color: #64748b;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-accent);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Footer Configuration --- */
+footer {
+  background-color: var(--primary-color);
+  color: #94a3b8;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  border-top: 4px solid var(--secondary-accent);
+}
+
+footer a {
+  color: var(--border-light);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- 📱 RESPONSIVE BREAKPOINTS (Ensures Mobile Layout Wireframe Integration) --- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid,
+  .directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  nav .nav-links.show {
+    display: flex;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .features,
+  .services-grid,
+  .directory-grid,
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-controls {
+    flex-wrap: wrap;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+}
